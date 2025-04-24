@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "스토리in서경",
+    "slug": "StoryInSEDaily",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.ico"
+    },
+    "fonts": [
+      {
+        "asset": "./assets/fonts/Montserrat-Regular.ttf",
+        "family": "Montserrat-Regular"
+      },
+      {
+        "asset": "./assets/fonts/Montserrat-Medium.ttf",
+        "family": "Montserrat-Medium"
+      },
+      {
+        "asset": "./assets/fonts/Montserrat-SemiBold.ttf",
+        "family": "Montserrat-SemiBold"
+      },
+      {
+        "asset": "./assets/fonts/Montserrat-Bold.ttf",
+        "family": "Montserrat-Bold"
+      },
+      {
+        "asset": "./assets/fonts/CircularXX-Book.ttf",
+        "family": "CircularXX-Book"
+      },
+      {
+        "asset": "./assets/fonts/CircularXX-Regular.ttf",
+        "family": "CircularXX-Regular"
+      },
+      {
+        "asset": "./assets/fonts/CircularXX-Medium.ttf",
+        "family": "CircularXX-Medium"
+      },
+      {
+        "asset": "./assets/fonts/CircularXX-Bold.ttf",
+        "family": "CircularXX-Bold"
+      }
+    ]
+  }
+}

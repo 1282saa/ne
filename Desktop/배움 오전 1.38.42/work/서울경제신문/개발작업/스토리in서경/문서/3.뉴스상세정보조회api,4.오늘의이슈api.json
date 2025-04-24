@@ -1,0 +1,39 @@
+{
+  "뉴스상세정보조회API": {
+    "요청URL": "https://tools.kinds.or.kr/search/news",
+    "요청형식": {
+      "news_ids": ["기사 고유 식별자 목록"],
+      "fields": [
+        "content",
+        "byline",
+        "category",
+        "category_incident",
+        "images",
+        "images_caption",
+        "provider_subject",
+        "provider_news_id",
+        "publisher_code"
+      ]
+    },
+    "설명": "뉴스 식별자(news_ids)를 기반으로 뉴스 상세 정보를 요청하고, 원하는 필드(fields)를 지정하여 응답을 제한함"
+  },
+  "오늘의이슈API": {
+    "요청URL": "https://tools.kinds.or.kr/issue_ranking",
+    "요청형식": {
+      "date": "YYYY-MM-DD",
+      "provider": ["언론사 코드 또는 명칭 (선택사항)"]
+    },
+    "출력결과형식": {
+      "date": "YYYY-MM-DD",
+      "topics": [
+        {
+          "topic": "이슈 제목",
+          "topic_rank": "이슈 중요도",
+          "topic_keyword": "이슈 관련 키워드 문자열",
+          "news_cluster": ["연관 뉴스 식별자 목록"]
+        }
+      ]
+    },
+    "설명": "지정된 날짜의 주요 이슈를 분석하여 뉴스 제목, 키워드, 관련 뉴스 식별자(news_cluster) 등을 제공"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "오늘의키워드API": {
+    "요청URL": "https://tools.kinds.or.kr/today_category_keyword",
+    "요청형식": {
+      "access_key": "API 키",
+      "argument": {}
+    },
+    "출력결과형식": {
+      "date": "YYYYMMDD",
+      "cate_ratio": [
+        {
+          "category_name": "카테고리명",
+          "category_code": "카테고리코드",
+          "category_percent": "비율(%)",
+          "category_count": "기사 수"
+        }
+      ],
+      "cate_keyword": [
+        {
+          "category_name": "카테고리명",
+          "category_code": "카테고리코드",
+          "named_entity": "키워드",
+          "named_entity_count": "등장 횟수",
+          "named_entity_type": "개체 타입 (PS: 인물, LC: 장소, OG: 기관)",
+          "entity_step": "step1 ~ step5 (키워드 강조도 단계)"
+        }
+      ]
+    },
+    "설명": "빅카인즈 메인에서 활용되는 오늘의 키워드 정보를 제공. 분야별 뉴스 비율과 대표 키워드를 함께 반환."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "api_name": "연관어 분석 API",
+  "version": "1.49",
+  "last_updated": "2023-06-21",
+  "description": "입력 키워드와 연관이 높은 키워드들을 지정한 검색 조건에 해당하는 문서들에서 실시간으로 추출하여 제공",
+  "algorithm": "TOPIC RANK",
+  "endpoint": "https://tools.kinds.or.kr/word_cloud",
+  "request_format": {
+    "access_key": "string",
+    "argument": {
+      "query": "string",
+      "published_at": {
+        "from": "YYYY-MM-DD",
+        "until": "YYYY-MM-DD"
+      },
+      "provider": ["string"],
+      "category": ["string"],
+      "category_incident": ["string"],
+      "byline": "string",
+      "provider_subject": ["string"]
+    }
+  },
+  "request_parameters": {
+    "query": "연관 키워드 추출 기준 키워드 (필수)",
+    "published_at": "검색 기간, YYYY-MM-DD 형식",
+    "provider": "뉴스 제공 언론사, 이름 또는 코드 (OR 조건)",
+    "category": "뉴스 통합 분류체계 값, 이름 또는 코드 (OR 조건)",
+    "category_incident": "뉴스 사건/사고 분류체계 값, 이름 또는 코드 (OR 조건)",
+    "byline": "기자 이름 (OR 조건 가능)",
+    "provider_subject": "기사 주제 분류 값"
+  },
+  "response_format": {
+    "result": "0 (성공 여부)",
+    "return_object": {
+      "nodes": [
+        {
+          "id": "integer",
+          "name": "string",
+          "level": "integer",
+          "weight": "float"
+        }
+      ]
+    }
+  },
+  "response_fields": {
+    "id": "키워드 구분용 식별자",
+    "name": "연관 키워드 명칭",
+    "level": "연결 단계 (워드 클라우드에서는 무시)",
+    "weight": "중요도 수치"
+  }
+}

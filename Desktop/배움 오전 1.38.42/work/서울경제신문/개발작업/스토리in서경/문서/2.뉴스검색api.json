@@ -1,0 +1,58 @@
+{
+  "request": {
+    "endpoint": "https://tools.kinds.or.kr/search/news",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_key": "[API_KEY]",
+      "argument": {
+        "query": "서비스 AND 출시",
+        "published_at": {
+          "from": "2019-01-01",
+          "until": "2019-03-31"
+        },
+        "provider": ["경향신문"],
+        "category": ["정치>정치일반", "IT_과학"],
+        "category_incident": ["범죄", "교통사고", "재해>자연재해"],
+        "byline": "",
+        "provider_subject": ["경제", "부동산"],
+        "subject_info": [""],
+        "subject_info1": [""],
+        "subject_info2": [""],
+        "subject_info3": [""],
+        "subject_info4": [""],
+        "sort": {
+          "date": "desc"
+        },
+        "hilight": 200,
+        "return_from": 0,
+        "return_size": 5,
+        "fields": [
+          "byline",
+          "category",
+          "category_incident",
+          "provider_news_id"
+        ]
+      }
+    }
+  },
+  "response_sample": {
+    "news_id": "02100601.20211027093629001",
+    "title": "여의도 하나금투 담은 리츠, '코람코더원'으로 이름 변경",
+    "hilight": "...",
+    "published_at": "2021-10-27T00:00:00.000+09:00",
+    "enveloped_at": "2021-10-28T09:36:29.000+09:00",
+    "dateline": "2021-10-28T09:36:29.000+09:00",
+    "provider": "한국경제",
+    "category": ["경제>증권_증시", "경제>산업_기업", "경제>부동산"],
+    "category_incident": [],
+    "byline": "윤아영",
+    "images": "/02100601/2021/10/27/02100601.20211027093629001.01.jpg",
+    "images_caption": "마켓인사이트",
+    "provider_news_id": "202110263143r",
+    "publisher_code": "202110263143r",
+    "tms_raw_stream": "..."
+  }
+}

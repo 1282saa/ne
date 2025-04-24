@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "version": "1.49",
+    "project": "뉴스 빅데이터 분석 시스템 구축",
+    "service": "OpenAPI 서비스",
+    "author": "왕경문",
+    "date": "2023-06-21"
+  },
+  "revision_history": [
+    {
+      "version": "1.0",
+      "date": "2016-01-26",
+      "content": "제정",
+      "author": "김진우",
+      "approver": "김진우"
+    },
+    {
+      "version": "1.49",
+      "date": "2024-12-10",
+      "content": "뉴스 조회 리턴필드 images_caption 추가",
+      "author": "왕경문",
+      "approver": "왕경문"
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. 개요",
+      "subsections": {
+        "1.1 연계 방식": [
+          "HTTPS 프로토콜의 POST 방식 사용",
+          "입출력 데이터 형식은 UTF-8 인코딩된 JSON",
+          "JSON 객체 형태로 전달 (JSON 파일은 지원 안됨)"
+        ],
+        "1.2 인증 방식": ["인증키 발급 후 등록된 인증키만 사용 가능"]
+      }
+    },
+    {
+      "title": "2. 뉴스 검색 API",
+      "subsections": {
+        "2.1 요청 URL": null,
+        "2.2 요청 형식": null,
+        "2.3 출력 결과 형식": null
+      }
+    },
+    {
+      "title": "3. 뉴스 조회 API",
+      "subsections": {
+        "3.1 요청 URL": null,
+        "3.2 요청 형식": null,
+        "3.3 출력 결과 형식": null
+      }
+    }
+  ],
+  "toc": [
+    "뉴스 검색 API",
+    "뉴스 조회 API",
+    "이슈 랭킹 API",
+    "워드 클라우드 API",
+    "뉴스 타임라인 API",
+    "인기검색어 API",
+    "뉴스 인용문 검색 API",
+    "분야별 키워드 API",
+    "특성 추출 API",
+    "키워드 추출 API",
+    "TopN 키워드 API",
+    "코드 테이블",
+    "TOPIC RANK 알고리즘"
+  ]
+}

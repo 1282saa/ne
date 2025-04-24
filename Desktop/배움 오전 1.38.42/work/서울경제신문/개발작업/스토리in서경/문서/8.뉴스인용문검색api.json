@@ -1,0 +1,67 @@
+{
+  "request": {
+    "endpoint": "https://tools.kinds.or.kr/search/quotation",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_key": "[API_KEY]",
+      "argument": {
+        "query": "빅데이터",
+        "published_at": {
+          "from": "2019-01-01",
+          "until": "2019-03-30"
+        },
+        "provider": ["경향신문", "국민일보", "내일신문"],
+        "category": ["정치>정치일반", "스포츠일반", "IT_과학"],
+        "category_incident": ["범죄", "교통사고", "재해>자연재해"],
+        "byline": "",
+        "provider_subject": [""],
+        "subject_info": [""],
+        "subject_info1": [""],
+        "subject_info2": [""],
+        "subject_info3": [""],
+        "subject_info4": [""],
+        "sort": {
+          "date": "desc"
+        },
+        "hilight": 200,
+        "return_from": 0,
+        "return_size": 5,
+        "fields": [
+          "hilight",
+          "byline",
+          "category",
+          "category_incident",
+          "images",
+          "provider_subject",
+          "subject_info",
+          "provider_news_id",
+          "publisher_code"
+        ]
+      }
+    }
+  },
+  "response_sample": {
+    "news_id": "01100201.20190111193338001",
+    "published_at": "2019-01-11T00:00:00.000+09:00",
+    "date": "20190111",
+    "provider": "국민일보",
+    "category": ["IT_과학>인터넷_SNS", "IT_과학>과학"],
+    "category_incident": ["범죄>기업범죄>거래제한"],
+    "provider_subject": [
+      {
+        "subject_info": "경제",
+        "subject_info1": "경제일반",
+        "subject_info2": "11151100",
+        "subject_info3": "",
+        "subject_info4": ""
+      }
+    ],
+    "publisher_code": "",
+    "subject_info": ["경제"],
+    "source": "문재인 대통령",
+    "quotation": "한국형 규제 샌드박스 시행은 신기술, 신제품의 빠른 시장성 점검과 출시를 도울 것"
+  }
+}

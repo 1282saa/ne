@@ -1,0 +1,59 @@
+[
+  {
+    "api": "키워드트렌드API",
+    "url": "https://tools.kinds.or.kr/time_line",
+    "method": "POST",
+    "request": {
+      "access_key": "string",
+      "argument": {
+        "query": "string",
+        "published_at": {
+          "from": "YYYY-MM-DD",
+          "until": "YYYY-MM-DD"
+        },
+        "provider": ["신문사명"],
+        "category": ["정치>정치일반", "스포츠일반"],
+        "category_incident": ["범죄", "교통사고"],
+        "byline": "기자명",
+        "provider_subject": ["사회"],
+        "interval": "month",
+        "normalize": "false"
+      }
+    },
+    "response": {
+      "result": 0,
+      "return_object": {
+        "total_hits": 27,
+        "time_line": [
+          { "label": "201801", "hits": 2 },
+          { "label": "201802", "hits": 2 },
+          { "label": "201803", "hits": 2 }
+        ]
+      }
+    }
+  },
+  {
+    "api": "인기검색어API",
+    "url": "https://tools.kinds.or.kr/query_rank",
+    "method": "POST",
+    "request": {
+      "access_key": "string",
+      "argument": {
+        "from": "YYYY-MM-DD",
+        "until": "YYYY-MM-DD",
+        "offset": 5,
+        "target_access_key": ""
+      }
+    },
+    "response": {
+      "result": 0,
+      "return_object": {
+        "queries": [
+          { "date": "20180101", "query": "부시", "count": 2105 },
+          { "date": "20180101", "query": "조지", "count": 1405 },
+          { "date": "20180101", "query": "오바마", "count": 1336 }
+        ]
+      }
+    }
+  }
+]

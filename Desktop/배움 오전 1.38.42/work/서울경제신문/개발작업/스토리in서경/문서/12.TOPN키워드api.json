@@ -1,0 +1,39 @@
+
+{
+    "api": "TopN키워드API",
+    "url": "https://tools.kinds.or.kr/topn_keyword",
+    "method": "POST",
+    "request": {
+        "access_key": "string",
+        "argument": {
+            "type": "조건 유형 (1 또는 2)",
+            "date_hour": "yyyyMMddHH",
+            "published_at": {
+                "from": "YYYY-MM-DD",
+                "until": "YYYY-MM-DD"
+            },
+            "query": "청와대",
+            "category": [
+                "001000000",  # 정치
+                "002000000",  # 경제
+                "003000000 003003000",  # 사회 > 세부
+                "004000000",  # 문화
+                "005000000",  # 국제
+                "006000000",  # 지역
+                "007000000",  # 스포츠
+                "008000000"   # IT과학
+            ]
+        }
+    },
+    "response": {
+        "result": 0,
+        "return_object": {
+            "result": [
+                { "rank": "1", "name": "일본" },
+                { "rank": "2", "name": "한국" },
+                { "rank": "3", "name": "미국" },
+                { "rank": "4", "name": "서울" }
+            ]
+        }
+    }
+}

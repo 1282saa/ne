@@ -1,0 +1,54 @@
+[
+  {
+    "api_name": "특성 추출 API",
+    "version": "1.49",
+    "last_updated": "2023-06-21",
+    "description": "입력된 텍스트(제목, 부제목, 본문)의 주요 특성 키워드와 중요도를 추출",
+    "endpoint": "https://tools.kinds.or.kr/feature",
+    "request_format": {
+      "access_key": "string",
+      "argument": {
+        "title": "string",
+        "sub_title": "string",
+        "content": "string"
+      }
+    },
+    "response_format": {
+      "result": 0,
+      "return_object": {
+        "result": {
+          "title": "keyword|weight ...",
+          "sub_title": "keyword|weight ...",
+          "content": "keyword|weight ..."
+        }
+      }
+    },
+    "note": "텍스트에 큰따옴표(“”) 포함 시 \\로 이스케이프 필요"
+  },
+  {
+    "api_name": "키워드 추출 API",
+    "version": "1.49",
+    "last_updated": "2023-06-21",
+    "description": "입력된 텍스트에서 키워드를 추출 (중요도 없이 키워드만 반환)",
+    "endpoint": "https://tools.kinds.or.kr/keyword",
+    "request_format": {
+      "access_key": "string",
+      "argument": {
+        "title": "string",
+        "sub_title": "string",
+        "content": "string"
+      }
+    },
+    "response_format": {
+      "result": 0,
+      "return_object": {
+        "result": {
+          "title": "string",
+          "sub_title": "string",
+          "content": "string"
+        }
+      }
+    },
+    "note": "큰따옴표 포함 시 \\로 이스케이프 처리"
+  }
+]

@@ -1,0 +1,142 @@
+
+---
+
+# 📄 **환경변수 기반 BigKinds API 연동 기술 보고서**
+
+**프로젝트명:** Story IN 서울경제  
+**작성자:** (너의 이름)  
+**작성일:** 2025.04.24  
+**작성 목적:** BigKinds API 연동을 위한 `.env` 환경변수 구성, 설정, TypeScript 연동 처리 과정을 기술하여 개발 인수인계를 원활하게 하기 위함
+
+---
+
+## ✅ 1. 개요
+
+본 프로젝트는 BigKinds 뉴스 API를 활용하여 서울경제신문의 뉴스를 앱에서 불러오는 기능을 제공합니다. 보안을 고려하여 API 키는 `.env` 파일을 통해 관리되며, `react-native-dotenv` 패키지를 활용해 환경변수를 React Native 앱 내에서 사용할 수 있도록 설정합니다.
+
+---
+
+## ✅ 2. 사용된 기술 및 라이브러리
+
+| 항목 | 내용 |
+|------|------|
+| 환경변수 관리 | `.env`, `react-native-dotenv`, `@env` alias |
+| 타입 인식 | `env.d.ts` 타입 선언 |
+| 번들러 설정 | `babel.config.js` 설정 |
+| Expo 환경 | `expo start -c` 명령어로 캐시 초기화 필수 |
+| 주요 키 | `BIGKINDS_KEY` (BigKinds API 접근 키) |
+
+---
+
+## ✅ 3. 설정 절차 요약
+
+### 3.1 `.env` 파일 생성
+
+```env
+BIGKINDS_KEY=your-api-key-here
+```
+
+**주의:** 등호(`=`) 뒤에 공백이나 따옴표 금지.
+
+---
+
+### 3.2 `babel.config.js` 수정
+
+```js
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: ["babel-preset-expo"],
+    plugins: [
+      [
+        "module:react-native-dotenv",
+        {
+          moduleName: "@env",
+          path: ".env",
+          allowUndefined: false,
+        },
+      ],
+    ],
+  };
+};
+```
+
+---
+
+### 3.3 TypeScript 타입 선언 (`env.d.ts`)
+
+```ts
+declare module "@env" {
+  export const BIGKINDS_KEY: string;
+}
+```
+
+해당 파일은 루트에 위치시킬 것.
+
+---
+
+### 3.4 `tsconfig.json`에 경로 설정 (선택적)
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@env": ["./env.d.ts"]
+    }
+  }
+}
+```
+
+---
+
+### 3.5 캐시 초기화 및 앱 재실행
+
+```bash
+expo start -c
+```
+
+---
+
+## ✅ 4. 코드 사용 예시
+
+```ts
+import { BIGKINDS_KEY } from "@env";
+
+console.log("BIGKINDS API KEY:", BIGKINDS_KEY);
+```
+
+---
+
+## ✅ 5. 오류 발생 시 대응 전략
+
+| 오류 메시지 | 원인 | 해결 방법 |
+|-------------|------|-----------|
+| `Cannot resolve module '@env'` | babel 설정 누락 | `babel.config.js`에 plugins 확인 |
+| `undefined` 출력 | .env 파일 잘못 구성 | 따옴표 제거, 공백 제거, 저장 확인 |
+| 타입 오류 | TS가 @env 모듈 인식 못 함 | `env.d.ts` 파일 작성 필요 |
+| 키 변경해도 안 바뀜 | 캐시 때문 | `expo start -c` 필수 |
+
+---
+
+## ✅ 6. 추가 권장 사항
+
+- `.env`는 반드시 `.gitignore`에 추가할 것
+- 실제 배포 시 `.env.production` 같은 분리도 고려 가능
+- 기타 API 키 (`Firebase`, `Sentry`, `Map`, `OAuth`) 도 동일 방식으로 확장 가능
+
+---
+
+## ✅ 7. 결론
+
+본 보고서에 정리된 방식대로 `.env` 환경설정을 구성하면 BigKinds API를 안전하고 효율적으로 사용할 수 있으며, 타입 안정성과 유지보수성도 확보할 수 있습니다. 개발 인수자도 본 보고서만 참고하여 동일한 환경을 재현할 수 있습니다.
+
+---
+
+## 📎 첨부파일
+
+- `.env` 샘플 파일  
+- `babel.config.js` 예시  
+- `env.d.ts` 타입 정의  
+- API 연동 코드 (newsService.ts)
+
+---
